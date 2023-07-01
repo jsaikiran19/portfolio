@@ -1,0 +1,19 @@
+@import '../../colors.scss';
+.tab-container {
+    padding: 2rem;
+    div {
+        margin: 1rem 0;
+        strong {
+            color: $primary-dark;
+        }
+    }
+}
+.MuiTab-root{
+    color: $primary-dark !important;
+}
+.projects-container {
+    width: 70rem;
+}
+.MuiTabs-scrollButtons.Mui-disabled {
+    opacity: 0.3 !important;
+}

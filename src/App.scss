@@ -1,0 +1,105 @@
+@import "./colors.scss";
+html {
+  scroll-behavior: smooth;
+}
+@keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+.App {
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    .left-pane {
+      color: $primary;
+      font-weight: 600;
+    }
+    .right-pane {
+      margin-right: 2rem;
+      nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        a {
+          text-decoration: none;
+          color: $primary;
+          font-weight: 600;
+          padding-bottom: 0.5rem;
+          &:hover {
+            color: $primary-dark !important;
+            border-bottom: 1px solid $primary-dark;
+          }
+        }
+      }
+    }
+  }
+  .welcome-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15rem 2rem;
+    .greeting {
+      font-size: 70px;
+      margin-bottom: 1rem;
+      color: $primary-dark;
+    }
+    .description {
+      font-size: 20px;
+      color: $primary;
+    }
+    .socials {
+      margin: 2rem;
+      display: flex;
+      gap: 1rem;
+      a {
+        position: relative;
+        &:hover {
+          animation: bounce 0.5s infinite linear;
+        }
+      }
+    }
+    .scroll-down {
+      animation: bounce 2s infinite 2s;
+      transition: all 0.2s ease-in;
+    }
+    .resume {
+      margin-bottom: 3rem;
+      a {
+        color: $primary;
+        padding: 0.5rem;
+        display: flex;
+        border: 2px solid $primary;
+        border-radius: 20px;
+        &:hover {
+          color: white;
+          background-color: $primary;
+          svg {
+            position: relative;
+            animation: bounce 0.5s infinite linear;
+          }
+        }
+      }
+    }
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .vertical-timeline.vertical-timeline--two-columns:before {
+      margin-left: 6px;
+      background: lightblue;
+    }
+    .section-title {
+      display: flex;
+      font-size: 2rem;
+      justify-content: center;
+      color: $primary-dark;
+      margin: 2rem;
+      border-bottom: 1px solid $primary;
+    }
+  }
+}
