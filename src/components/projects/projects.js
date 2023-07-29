@@ -19,7 +19,7 @@ function TabPanel(props) {
 export default function Projects() {
   const cards = [
     {
-      name: "Wellness Tracking Application",
+      name: "Fitness Dial",
       tools: ["React", "ExpressJS", "MongoDB", "Firebase"],
       description:
         "Created a wellness application using React and ExpressJS which allows users to view content uploaded by fitness professionals. Built three distinct dashboards tailored for users, fitness professionals, and administrators. Devised a subscription-based model using Express and MongoDB, delivering personalized content to users based on their subscription preferences",
@@ -43,7 +43,7 @@ export default function Projects() {
     },
   ];
   const [value, setValue] = useState(0);
-  const handleChange = (event, newValue) => {
+  const handleChange = (_event, newValue) => {
     setValue(newValue);
   };
   return (
@@ -62,7 +62,7 @@ export default function Projects() {
         ;
       </Tabs>
       {cards.map((card, i) => {
-        const desc = card.description.split('.');
+        // const desc = card.description.split('.');
         return (
           <TabPanel key={i} value={value} index={i}>
             <Paper elevation={3} style={{ height: "16rem" }}>

@@ -2,6 +2,16 @@
 html {
   scroll-behavior: smooth;
 }
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: $primary-dark; }
+}
 @keyframes bounce {
   0% { top: 0; }
   50% { top: -0.2em; }
@@ -40,14 +50,22 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15rem 2rem;
+    margin: 15rem 21rem;
+    @media (max-width: 768px) {
+      margin: 8rem 5rem;
+    }
+    width: fit-content;
     .greeting {
-      font-size: 70px;
+      font-size: 4rem;
       margin-bottom: 1rem;
+      border-right: .1em solid $primary-dark;
       color: $primary-dark;
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
     }
     .description {
-      font-size: 20px;
+      font-size: 2rem;
       color: $primary;
     }
     .socials {

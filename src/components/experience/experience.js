@@ -13,8 +13,6 @@ const Icon = (props) => (
   <img
     src={props.path}
     style={{ borderRadius: 40 }}
-    height={80}
-    width={80}
     alt=""
   />
 );
@@ -59,10 +57,10 @@ export default function Experience() {
         position={exp.position}
         icon={<Icon path={exp.path}></Icon>}
         contentArrowStyle={{ borderRight: "7px solid  lightblue" }}
-        contentStyle={{ background: "lightsteelblue" }}
+        contentStyle={{ background: "lightsteelblue"}}
         iconStyle={{
-          height: "80px",
-          width: "80px",
+          height: "5rem",
+          width: "5rem",
           boxShadow:
             "0 0 0 4px grey, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)",
         }}

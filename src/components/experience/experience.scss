@@ -1,4 +1,16 @@
 @import '../../colors.scss';
+
+.vertical-timeline-element-content {
+    @media (max-width: 768px) {
+        margin-left: 7rem !important;
+      }
+   
+}
 .exp-title {
     color: $primary;
+}
+
+img {
+    height: 5rem;
+    width: 5rem;
 }

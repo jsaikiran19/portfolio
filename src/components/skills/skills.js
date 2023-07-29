@@ -103,7 +103,7 @@ export default function Skills() {
             {skills && skills.map(skill=>{
                 return (
                     <div key={skill.name} className='skill-item'>
-                    <img height={80} width={80} src={skill.icon} alt=''></img>
+                    <img src={skill.icon} alt=''></img>
                     <div className='skill-name'>{skill.name}</div>
                     </div>
                 )

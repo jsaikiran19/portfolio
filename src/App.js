@@ -1,21 +1,20 @@
-import React from "react";
-import "./App.scss";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import Experience from "./components/experience/experience";
-import Skills from "./components/skills/skills";
-import resume from "./assets/Sai_Kiran_Jella_Resume.pdf";
-import Projects from "./components/projects/projects";
-import CircularProgress from "@mui/material/CircularProgress";
-import { Backdrop } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DownloadIcon from "@mui/icons-material/Download";
+import { Backdrop, IconButton, Menu, MenuItem, useMediaQuery } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+import { createTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
-import Typography from "@mui/material/Typography";
+import React, { useState } from "react";
+import "./App.scss";
+import resume from "./assets/Sai_Kiran_Jella_Resume.pdf";
+import Experience from "./components/experience/experience";
+import Projects from "./components/projects/projects";
+import Skills from "./components/skills/skills";
+import MenuIcon from '@mui/icons-material/Menu';
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 function CircularProgressWithLabel(props) {
   return (
@@ -67,9 +66,10 @@ function App() {
       },
     },
   });
-
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const [anchorEl, setAnchorEl] = React.useState(null);
   const [progress, setProgress] = React.useState(1);
-
+  const [open, setOpen] = useState(false);
   React.useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => (prev >= 100 ? 0 : prev + 10));
@@ -81,13 +81,18 @@ function App() {
     }, 1100);
   }, []);
   function preventNavigation(e) {
-    const el = e.target.hash;
+    const el = e.target.hash || e.target.attributes.getNamedItem('href').nodeValue;
     e.preventDefault();
     document.getElementById(el.slice(1)).scrollIntoView();
+    setOpen(false);
     // console.log(el);
 
     // e.stopPropagation();
   }
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpen(true)
+  };
   return (
     <div className="App">
       {progress < 100 ? (
@@ -100,9 +105,32 @@ function App() {
       ) : (
         <React.Fragment>
           <header className="app-header">
-            <div className="left-pane">Sai Kiran Jella</div>
+            <div className="left-pane"></div>
             <div className="right-pane">
-              <nav>
+              { isMobile ? <><IconButton
+                aria-label="more"
+                id="long-button"
+                aria-controls={open ? "long-menu" : undefined}
+                aria-expanded={open ? "true" : undefined}
+                aria-haspopup="true"
+                onClick={handleClick}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu open={open} onClose={() => setOpen(false)} anchorEl={anchorEl}>
+                <MenuItem href="#projects" onClick={preventNavigation}>
+                  Projects
+                </MenuItem>
+                <MenuItem href="#experience" onClick={preventNavigation}>
+                  Experience
+                </MenuItem>
+                <MenuItem href="#skills" onClick={preventNavigation}>
+                  Skills
+                </MenuItem>
+                <MenuItem download href={resume} onClick={preventNavigation}>
+                  Resume
+                </MenuItem>
+              </Menu></> : <nav>
                 <a href="#projects" onClick={preventNavigation}>
                   Projects
                 </a>
@@ -112,13 +140,14 @@ function App() {
                 <a href="#skills" onClick={preventNavigation}>
                   Skills
                 </a>
-                <a href="#contact" onClick={preventNavigation}>
+                {/* <a href="#contact" onClick={preventNavigation}>
                   Contact
-                </a>
+                </a> */}
                 <a download href={resume}>
                   Resume
                 </a>
-              </nav>
+              </nav>}
+              
             </div>
           </header>
           <div className="welcome-page">
