@@ -37,9 +37,11 @@ jobs:
       - run: npm ci
       - name: Build application
         run: CI=false npm run build
-      - name: deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./build  
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          projectId: portfolio-ca102
+          channelId: live
        
