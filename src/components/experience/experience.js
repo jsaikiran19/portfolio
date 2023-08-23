@@ -57,7 +57,7 @@ export default function Experience() {
         position={exp.position}
         icon={<Icon path={exp.path}></Icon>}
         contentArrowStyle={{ borderRight: "7px solid  lightblue" }}
-        contentStyle={{ background: "lightsteelblue"}}
+        contentStyle={{ background: "white", boxShadow: "0 0 5px 2px #ddd"}}
         iconStyle={{
           height: "5rem",
           width: "5rem",
@@ -66,7 +66,7 @@ export default function Experience() {
         }}
       >
         <h3 className="exp-title">{exp.title}</h3>
-        <h5 className="exp-desc">{exp.description}</h5>
+        <div className="exp-desc">{exp.description}</div>
       </VerticalTimelineElement>
       )})}
     </VerticalTimeline>
