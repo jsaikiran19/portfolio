@@ -181,6 +181,7 @@ function App() {
           </header>
           <div className="welcome-page">
             <div className="greeting">Hi, This is Sai Kiran Jella</div>
+            <div className="subtitle">Application Developer @ CNS &ensp; | &ensp; Open to work</div>
             <div className="description">
               A passionate Full Stack Developer with a three-year background and
               a Master's degree in Computer Science from Indiana University

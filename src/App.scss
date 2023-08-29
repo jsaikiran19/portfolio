@@ -64,11 +64,15 @@ html {
 
     .greeting {
       font-size: 4rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       border-right: .1em solid $primary-dark;
       animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
       white-space: nowrap;
       overflow: hidden;
+    }
+    .subtitle {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
     }
     .description {
       font-size: 1.5rem;
@@ -127,6 +131,10 @@ html {
     .greeting {
       color: $primary-dark;
     }
+    .subtitle {
+      color: $primary;
+      border-bottom: 1px solid $primary;
+    }
     .section-title {
       color: $primary-dark;
       border-bottom: 1px solid $primary;
@@ -147,6 +155,9 @@ html {
     }
   }
   .dark {
+    .subtitle {
+      border-bottom: 1px solid white;
+    }
     color: white;
     .section-title {
       color: white;

@@ -16,7 +16,7 @@ const Icon = (props) => (
 export default function Experience() {
   const experiences = [
     {
-      date: "May 2022 - May 2023",
+      date: "May 2022 - Present",
       position: "left",
       title: "Application Developer",
       description:
