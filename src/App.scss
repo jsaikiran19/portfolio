@@ -1,4 +1,5 @@
 @import "./colors.scss";
+
 html {
   scroll-behavior: smooth;
 }
@@ -19,10 +20,19 @@ html {
   100% { top: 0; }
 }
 .App {
+  .light {
+    // color: $primary !important;
+    background: white !important;
+
+  }
+  .dark {
+    
+    background: #282c34 !important;
+  }
   header {
     display: flex;
     justify-content: space-between;
-    margin: 1rem;
+    padding: 1rem;
     .left-pane {
       color: $primary;
       font-weight: 600;
@@ -33,15 +43,11 @@ html {
         display: flex;
         justify-content: space-between;
         gap: 1rem;
+        align-items: center;
         a {
           text-decoration: none;
-          color: $primary;
           font-weight: 600;
           padding-bottom: 0.5rem;
-          &:hover {
-            color: $primary-dark !important;
-            border-bottom: 1px solid $primary-dark;
-          }
         }
       }
     }
@@ -55,18 +61,17 @@ html {
       margin: 8rem 5rem;
     }
     width: fit-content;
+
     .greeting {
       font-size: 4rem;
       margin-bottom: 1rem;
       border-right: .1em solid $primary-dark;
-      color: $primary-dark;
       animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
       white-space: nowrap;
       overflow: hidden;
     }
     .description {
-      font-size: 2rem;
-      color: $primary;
+      font-size: 1.5rem;
     }
     .socials {
       margin: 2rem;
@@ -86,7 +91,6 @@ html {
     .resume {
       margin-bottom: 3rem;
       a {
-        color: $primary;
         padding: 0.5rem;
         display: flex;
         border: 2px solid $primary;
@@ -115,9 +119,41 @@ html {
       display: flex;
       font-size: 2rem;
       justify-content: center;
-      color: $primary-dark;
       margin: 2rem;
+      
+    }
+  }
+  .light {
+    .greeting {
+      color: $primary-dark;
+    }
+    .section-title {
+      color: $primary-dark;
       border-bottom: 1px solid $primary;
+    }
+    .description {
+      color: $primary;
+    }
+    nav {
+      a {
+        &:hover {
+          color: $primary-dark !important;
+          border-bottom: 1px solid $primary-dark;
+        }
+      }
+    }
+    a {
+      color: $primary;
+    }
+  }
+  .dark {
+    color: white;
+    .section-title {
+      color: white;
+      border-bottom: 1px solid white;
+    }
+    a {
+      color: white;
     }
   }
 }

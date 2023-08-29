@@ -1,4 +1,13 @@
 @import '../../colors.scss';
+.light {
+    .tab-container {
+        div {
+            strong {
+                color: $primary-dark;
+            }
+        }
+    }
+}
 .tab-container {
     padding: 2rem;
     @media (max-width: 768px) {
@@ -6,9 +15,6 @@
     }
     div {
         margin: 1rem 0;
-        strong {
-            color: $primary-dark;
-        }
     }
 }
 .MuiTabs-root {
@@ -16,7 +22,7 @@
         min-height: 0px !important;
     }
 }
-.MuiTab-root{
+.light .MuiTab-root{
     color: $primary-dark !important;
 }
 .projects-container {

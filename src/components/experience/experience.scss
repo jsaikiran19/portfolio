@@ -6,8 +6,15 @@
       }
    
 }
-.exp-title {
-    color: $primary;
+.light {
+    .exp-title {
+        color: $primary;
+    }
+}
+.dark {
+    .exp-title {
+        color: white;
+    }
 }
 
 img {
