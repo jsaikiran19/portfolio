@@ -37,6 +37,12 @@ export default function Projects() {
         "Built a bidirectional LSTM model that classifies a news sentence into four categories.",
     },
     {
+      name: 'Personal Portfolio',
+      tools: ["ReactJS", "Material UI", "Firebase", "Github Actions"],
+      description:
+      "Designed a personal portfolio web page with ReactJS and hosted the application on Firebase. Utilized Github Actions to setup a pipeline that builds and deploys application."
+    },
+    {
       name: "File System in Xinu",
       tools: ["C Progamming Language"],
       description: "Designed a File System in the Xinu OS. Implemented operations for creation, opening, reading, and writing of files.",
