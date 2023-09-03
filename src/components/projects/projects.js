@@ -6,6 +6,7 @@ function TabPanel(props) {
   return (
     <div
       role="tabpanel"
+      className="tabpanel"
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
@@ -71,7 +72,7 @@ export default function Projects() {
         // const desc = card.description.split('.');
         return (
           <TabPanel key={i} value={value} index={i}>
-            <Paper elevation={3} style={{ height: "16rem" }}>
+            <Paper className="paper" elevation={3} style={{ height: "16rem" }}>
               <div className="tab-container">
                 <div>
                   <strong>Description: </strong>

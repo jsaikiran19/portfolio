@@ -27,6 +27,9 @@
 }
 .projects-container {
     width: 70rem;
+    @media (max-width: 768px) {
+        width: 45rem;
+    }
 }
 .MuiTabs-scrollButtons.Mui-disabled {
     opacity: 0.3 !important;
@@ -38,4 +41,15 @@
         min-width: 2rem !important;
         min-height: 2rem !important;
       }
+}
+
+.tabpanel {
+    @media (max-width: 768px) {
+        width: 45rem !important;
+    }
+}
+.paper {
+    @media (max-width: 768px) {
+        height: 18rem !important;
+    }
 }
