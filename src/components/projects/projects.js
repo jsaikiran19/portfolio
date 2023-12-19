@@ -20,6 +20,12 @@ function TabPanel(props) {
 export default function Projects() {
   const cards = [
     {
+      name: 'CO2 emissions visualization system',
+      tools: ["Javascript", "Java", "Go", "Python","ExpressJS","Flask", "Spring Boot","GCP"],
+      description: 
+        "Building a distributed sytem for visualizing CO2 emissions across different time periods, states, sectors and fuel types. Deployed the apps on GKE cluster."
+    },
+    {
       name: "Fitness Dial",
       tools: ["React", "ExpressJS", "MongoDB", "Firebase"],
       description:

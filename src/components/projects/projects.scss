@@ -10,7 +10,7 @@
 }
 .tab-container {
     padding: 2rem;
-    @media (max-width: 768px) {
+    @media (max-device-width: 480px) {
         padding: 1rem;
     }
     div {
@@ -18,7 +18,7 @@
     }
 }
 .MuiTabs-root {
-    @media (max-width: 768px) {
+    @media (max-device-width: 480px) {
         min-height: 0px !important;
     }
 }
@@ -27,7 +27,7 @@
 }
 .projects-container {
     width: 70rem;
-    @media (max-width: 768px) {
+    @media (max-device-width: 480px) {
         width: 45rem;
     }
 }
@@ -36,7 +36,7 @@
 }
 
 .MuiButtonBase-root {
-    @media (max-width: 768px) {
+    @media (max-device-width: 480px) {
         padding: 5px !important;
         min-width: 2rem !important;
         min-height: 2rem !important;
@@ -44,12 +44,12 @@
 }
 
 .tabpanel {
-    @media (max-width: 768px) {
+    @media (max-device-width: 480px) {
         width: 45rem !important;
     }
 }
 .paper {
-    @media (max-width: 768px) {
+    @media (max-device-width: 480px) {
         height: 18rem !important;
     }
 }

@@ -1,7 +1,7 @@
 @import '../../colors.scss';
 
 .vertical-timeline-element-content {
-    @media (max-width: 768px) {
+    @media (max-device-width: 480px) {
         margin-left: 7rem !important;
       }
    
@@ -20,4 +20,7 @@
 img {
     height: 5rem;
     width: 5rem;
+    &.fidelity {
+        width: 5.5rem;
+    }
 }

@@ -7,17 +7,26 @@ import "react-vertical-timeline-component/style.min.css";
 import iu from "../../assets/IU.jpeg";
 import adp from "../../assets/adp.jpg";
 import mgit from "../../assets/mgit.png";
+import fidelity from "../../assets/fidelity.png";
 import "./experience.scss";
 import { useTheme } from "@mui/material";
 
 const Icon = (props) => (
-  <img src={props.path} style={{ borderRadius: 40 }} alt="" />
+  <img src={props.path} className={props.className} style={{ borderRadius: 40 }} alt="" />
 );
 export default function Experience() {
   const experiences = [
     {
-      date: "May 2022 - Present",
-      position: "left",
+      date: "Oct 2023 - Present",
+      position:"left",
+      title:"Full Stack Engineer",
+      description:
+      "Building and maintaining Java microservices for Fidelity's Annuity Account Opening Team and designing user interfaces using Angular.",
+      path:fidelity
+    },
+    {
+      date: "May 2022 - Oct 2023",
+      position: "right",
       title: "Application Developer",
       description:
         "Designed web applications using Angular, Ngxs, Storybook, and Figma. Automated the deployment process using Github actions to deploy the application on Netlify under 5 minutes.",
@@ -25,7 +34,7 @@ export default function Experience() {
     },
     {
       date: "Aug 2021 - May 2023",
-      position: "right",
+      position: "left",
       title: "Masters in Computer Science",
       description:
         "Graduated with a Masters in CS at Indiana University Bloomington.",
@@ -33,7 +42,7 @@ export default function Experience() {
     },
     {
       date: "Aug 2019 - Aug 2021",
-      position: "left",
+      position: "right",
       title: "Full Stack Engineer",
       description:
         "Revamped a Jenkins pipeline and utilized Docker to reduce build times by 20 minutes. Slashed the initial load size of the application by 80% by migrating AngularJS to Angular 8 and implementing a lazy loading approach. Spearheaded an initiative to establish a unified user experience across multiple applications, ensuring a seamless and intuitive interaction for users",
@@ -41,7 +50,7 @@ export default function Experience() {
     },
     {
       date: "Aug 2015 - May 2019",
-      position: "right",
+      position: "left",
       title: "Bachelor in Technology",
       description:
         "Pursued a bachelor in Computer Science at Mahatma Gandhi Institute of Technology",
@@ -58,7 +67,7 @@ export default function Experience() {
               key={exp.title}
               date={exp.date}
               position={exp.position}
-              icon={<Icon path={exp.path}></Icon>}
+              icon={<Icon className={exp.path.split(".")[0].split("/").at(-1)} path={exp.path}></Icon>}
               contentArrowStyle={{ borderRight: "7px solid  lightblue" }}
               contentStyle={{
                 background: theme==='light' ? "white": "#282c34",

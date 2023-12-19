@@ -57,7 +57,7 @@ CircularProgressWithLabel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 function App() {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-device-width: 480px)");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [progress, setProgress] = React.useState(1);
   const [open, setOpen] = useState(false);
@@ -179,9 +179,10 @@ function App() {
               )}
             </div>
           </header>
+          <div>
           <div className="welcome-page">
             <div className="greeting">Hi, This is Sai Kiran Jella</div>
-            <div className="subtitle">Application Developer @ CNS &ensp; | &ensp; Open to work</div>
+            <div className="subtitle">Full Stack Engineer @ Fidelity Investments &ensp; | &ensp; Open to work</div>
             <div className="description">
               A passionate Full Stack Developer with a three-year background and
               a Master's degree in Computer Science from Indiana University
@@ -228,6 +229,7 @@ function App() {
             {/* <a className="scroll-down" href="#projects">
             <KeyboardArrowDownIcon fontSize="large"/>
             </a> */}
+          </div>
           </div>
           <section className="projects" id="projects">
             <div className="section-title">Projects</div>
